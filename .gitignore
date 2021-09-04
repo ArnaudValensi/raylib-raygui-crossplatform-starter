@@ -1,0 +1,8 @@
+game
+game.exe
+build
+test_runner
+build-linux.log
+build-macos.log
+build-windows.log
+.ccls-cache
