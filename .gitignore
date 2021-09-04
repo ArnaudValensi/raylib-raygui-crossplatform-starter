@@ -1,0 +1,10 @@
+/game
+/game.exe
+/build
+/test
+/test.exe
+test_runner
+build-linux.log
+build-macos.log
+build-windows.log
+.ccls-cache
