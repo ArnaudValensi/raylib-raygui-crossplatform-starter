@@ -4,26 +4,40 @@
 #define RAYGUI_IMPLEMENTATION
 #include <raygui.h>
 
-#include <assert.h>
-#include <stdio.h>
+#if defined(PLATFORM_WEB)
+    #include <emscripten/emscripten.h>
+#endif
 
-void game_run() {
-    InitWindow(1280, 720, "Test"); // 1280x720 window named "Test"
+static void Update() {
+    BeginDrawing();
 
-    while (!WindowShouldClose()) {
-        BeginDrawing();
-
-        ClearBackground(RED);
-        if (GuiButton((Rectangle){500, 200, 250, 60}, "TEST BUTTON")) {
-            puts("Button pressed");
-        }
-
-        EndDrawing();
+    ClearBackground(RED);
+    if (GuiButton((Rectangle){500, 200, 250, 60}, "TEST BUTTON")) {
+        puts("Button pressed");
     }
+
+    EndDrawing();
+}
+
+void GameRun() {
+    InitWindow(1280, 720, "Game");
+
+#if defined(PLATFORM_WEB)
+    emscripten_set_main_loop(Update, 60, 1);
+#else
+    SetTargetFPS(60);       // Set our game to run at 60 frames-per-second
+    //--------------------------------------------------------------------------------------
+
+    // Main game loop
+    while (!WindowShouldClose())    // Detect window close button or ESC key
+    {
+        Update();
+    }
+#endif
 
     CloseWindow();
 }
 
-void test_something() {
+void test_Something() {
     check(true == true);
 }

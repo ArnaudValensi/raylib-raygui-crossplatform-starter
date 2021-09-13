@@ -4,7 +4,7 @@ This is a preconfigured project to create crossplatform games using raylib and r
 
 ## Features
 
-- Makefile to build the project on linux, windows or macos.
+- Makefile to build the project on linux, windows, macos or web.
 - Any new file in the `src/game` folder is automatically used by the build system.
 - The project use incremental build, meaning if there is no change in a file, it will not be recompiled.
 - Already configured for vscode's intellisense.
@@ -15,7 +15,8 @@ This is a preconfigured project to create crossplatform games using raylib and r
 
 ## Commands
 
-- `make` or `make all`: build the game.
+- `make` or `make all` or `make game`: build the game.
+- `make game-web`: build the game for the web. You need to have docker installed.
 - `make run`: build the game and run it.
 - `make clean`: remove all the files created with the `make all` command (`./build` and `./game`).
 - `make test`: run the tests.

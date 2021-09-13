@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-extern void test_something();
+extern void test_Something();
 
 #define RUN_TEST(test_function)      \
     do {                             \
@@ -11,7 +11,7 @@ extern void test_something();
 int main(void) {
     printf("\n");
 
-    RUN_TEST(test_something);
+    RUN_TEST(test_Something);
 
     printf("\n*** ALL TESTS PASSED ***\n\n");
 

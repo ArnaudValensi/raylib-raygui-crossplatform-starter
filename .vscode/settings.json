@@ -1,8 +1,3 @@
 {
-  "files.associations": {
-    ".env-test": "dotenv",
-    "time.h": "c",
-    "game_library.h": "c"
-  },
   "files.eol": "\n"
 }
